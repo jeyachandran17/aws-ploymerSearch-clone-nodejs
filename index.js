@@ -26,7 +26,7 @@ app.get("/all-details",async function (request, response) {
   response.send(result);
 })
 
-app.post('/details', async function (request, response) {
+app.post('/all-details', async function (request, response) {
   const details = request.body;
   const AllDedails = await client.db("b42wd2").collection("capstone").insertMany(details);
   response.send(AllDedails);
