@@ -33,4 +33,11 @@ app.post('/all-details', async function (request, response) {
 })
 
 
+// GET "all-license_name"
+
+app.get('/all-license-name', async function (request, response) {
+  const license_name = await client.db("b42wd2").collection("capstone").find({},{ projection: { _id: 0,license_name: 1, } }).toArray();
+  response.send(license_name);
+})
+
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
